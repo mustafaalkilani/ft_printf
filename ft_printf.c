@@ -38,6 +38,6 @@ int ft_printf(const char *identifier, ...)
 }
 int main(void)
 {
-    ft_printf("%x", 0);
+    printf("\n\nvalue:%d\n\n", ft_printf("%x", 0));
     return 0;
 }
