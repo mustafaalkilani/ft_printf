@@ -20,6 +20,10 @@ int ft_printf(const char *identifier, ...)
                 print_len += ft_putstr_fd(va_arg(args, char *), 1);
             if (identifier[i + 1] == 'd')
                 print_len += ft_putnbr_fd(va_arg(args, int), 1);
+            if (identifier[i + 1] == 'x')
+                print_len += ft_puthex_small(va_arg(args, unsigned int));
+            if (identifier[i + 1] == 'X')
+                print_len += ft_puthex_caps(va_arg(args, unsigned int));
             i++;
         }
         else
@@ -34,6 +38,6 @@ int ft_printf(const char *identifier, ...)
 }
 int main(void)
 {
-    ft_printf("%c", 'c');
+    ft_printf("%x", 0);
     return 0;
 }
