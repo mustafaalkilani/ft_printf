@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_small.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 19:25:37 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/31 21:53:53 by malkilan         ###   ########.fr       */
+/*   Created: 2025/08/31 16:34:31 by malkilan          #+#    #+#             */
+/*   Updated: 2025/08/31 19:24:01 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex_small(unsigned int num)
+int	ft_putnbr(int n)
 {
-	int		mod;
+	char	c;
 	int		len;
-	int		i;
-	char	*str;
 
-	mod = 0;
-	len = get_size(num);
-	i = len;
-	str = malloc(len + 1);
-	if (!str)
-		return (-1);
-	str[i] = 0;
-	if (num == 0)
-		str[0] = '0';
-	while (num > 0)
+	len = 0;
+	if (n == -2147483648)
 	{
-		mod = num % 16;
-		if (mod >= 0 && mod <= 9)
-			str[i - 1] = mod + '0';
-		else
-			str[i - 1] = mod + 'W';
-		num /= 16;
-		i--;
+		write(1, "-2147483648", 11);
+		return (11);
 	}
-	write(1, str, len);
-	free(str);
+	if (n < 0)
+	{
+		n = -n;
+		len += write(1, "-", 1);
+	}
+	if (n == 0)
+		len += ft_putchar('0');
+	if (n > 0)
+	{
+		if (n >= 10)
+			len += ft_putnbr(n / 10);
+		c = (n % 10) + '0';
+		len += write(1, &c, 1);
+	}
 	return (len);
 }
