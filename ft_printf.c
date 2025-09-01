@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 21:41:06 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/31 21:51:06 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/09/01 15:58:11 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ static int	handle_format(char specifier, va_list args)
 
 int	ft_printf(const char *identifier, ...)
 {
-    va_list args;
-    int i;
-	int print_len;
+	va_list	args;
+	int		i;
+	int		print_len;
 
 	va_start(args, identifier);
 	i = 0;

@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_small.c                                  :+:      :+:    :+:   */
+/*   get_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 19:25:37 by malkilan          #+#    #+#             */
-/*   Updated: 2025/09/01 15:18:55 by malkilan         ###   ########.fr       */
+/*   Created: 2025/09/01 15:21:02 by malkilan          #+#    #+#             */
+/*   Updated: 2025/09/01 15:21:42 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex_small(unsigned int num)
+int	get_size(unsigned long num)
 {
-	int		mod;
-	int		len;
-	int		i;
-	char	*str;
+	int	len;
 
-	len = get_size(num);
-	i = len;
-	str = malloc(len + 1);
-	if (!str)
-		return (-1);
-	str[i] = 0;
+	len = 0;
 	if (num == 0)
-		str[0] = '0';
+		return (1);
 	while (num > 0)
 	{
-		mod = num % 16;
-		if (mod <= 9)
-			str[--i] = mod + '0';
-		else
-			str[--i] = mod + 'W';
 		num /= 16;
+		len++;
 	}
-	write(1, str, len);
-	free(str);
 	return (len);
 }

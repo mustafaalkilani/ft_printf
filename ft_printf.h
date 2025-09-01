@@ -6,18 +6,18 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 16:35:18 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/31 21:47:42 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/09/01 15:21:25 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-int	ft_printf(const char *, ...);
+int	ft_printf(const char *identifier, ...);
 int	ft_putchar(char c);
 int	ft_putnbr(int n);
 int	ft_putstr(char *s);
