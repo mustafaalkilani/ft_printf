@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 21:41:06 by malkilan          #+#    #+#             */
-/*   Updated: 2025/09/01 16:04:46 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/09/02 20:24:20 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_printf(const char *identifier, ...)
 	va_start(args, identifier);
 	i = 0;
 	print_len = 0;
+	if (!identifier)
+		return (-1);
 	while (identifier[i])
 	{
 		if (identifier[i] == '%')
@@ -61,4 +63,10 @@ int	ft_printf(const char *identifier, ...)
 	}
 	va_end(args);
 	return (print_len);
+}
+#include <stdio.h>
+int	main(void)
+{
+	// printf("%d", ft_printf(NULL));
+	printf("%d", printf(NULL));
 }
