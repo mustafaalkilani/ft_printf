@@ -6,7 +6,7 @@ SRC = ft_printf.c ft_putchar.c ft_puthex_small.c ft_puthex_caps.c ft_putnbr.c ft
 
 OBJS = $(SRC:.c=.o)
 CC = cc
-CCfLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
