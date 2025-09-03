@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 21:41:06 by malkilan          #+#    #+#             */
-/*   Updated: 2025/09/02 20:24:20 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/09/03 15:47:09 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,4 @@ int	ft_printf(const char *identifier, ...)
 	}
 	va_end(args);
 	return (print_len);
-}
-#include <stdio.h>
-int	main(void)
-{
-	// printf("%d", ft_printf(NULL));
-	printf("%d", printf(NULL));
 }
